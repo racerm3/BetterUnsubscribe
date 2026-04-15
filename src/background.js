@@ -691,7 +691,9 @@ class UnsubMail extends UnsubMethod {
       subject: this.email.searchParams.has('subject')
         ? this.email.searchParams.get('subject')
         : 'unsubscribe',
-      body: 'Please unsubscribe me from your mailing list. Thank you.',
+      body: this.email.searchParams.has('body')
+        ? this.email.searchParams.get('body')
+        : 'Please unsubscribe me from your mailing list. Thank you.',
     };
 
     if (this.identity) {
