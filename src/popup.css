@@ -1,7 +1,10 @@
 body {
   width: 450px;
+  height: 300px;
   margin: 1em;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 #unsubscribeButton {
