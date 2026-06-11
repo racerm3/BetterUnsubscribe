@@ -81,11 +81,11 @@
   },
   "detailsTextPost": {
     "description": "Details for a Post request",
-    "message": "When you click \"Unsubscribe\", a post request will be sent to the following URL:"
+    "message": "\"Unsubscribe\" post request will be sent to the URL:"
   },
   "detailsTextWeb": {
     "description": "Details for a Web Link",
-    "message": "When you click \"Unsubscribe\", a browser window will open and will visit the following URL:"
+    "message": "\"Unsubscribe\" will open the URL:"
   },
   "emailBehaviorTitle": {
     "description": "Title for email behavior section",
@@ -107,7 +107,10 @@
     "description": "Label for reset button",
     "message": "Reset to Defaults"
   },
-  "saveButton": { "description": "Label for save button", "message": "Save" },
+  "saveButton": {
+    "description": "Label for save button",
+    "message": "Save"
+  },
   "settingsReset": {
     "description": "Message shown when settings are reset",
     "message": "Settings reset to defaults"
@@ -146,7 +149,7 @@
   },
   "unsubscribeQuestion": {
     "description": "Text asking the user if they want to unsubscribe",
-    "message": "Would you like to unsubscribe from this mailing list?"
+    "message": "Unsubscribe from this mailing list?"
   },
   "unsubscribeTitle": {
     "description": "Title of the unsubscribe page",

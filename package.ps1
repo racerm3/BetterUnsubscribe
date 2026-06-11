@@ -51,6 +51,10 @@ Add-Type -AssemblyName System.IO.Compression
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
 # Create the ZIP archive
+if (Test-Path $zipFilePath)
+{
+    Remove-Item -Path $zipFilePath -Force
+}
 $zip = [System.IO.Compression.ZipFile]::Open($zipFilePath, [System.IO.Compression.ZipArchiveMode]::Create)
 
 # Add all files from ./src into the root of the ZIP (no "src/" prefix)
@@ -71,16 +75,24 @@ Write-Host "Directory compressed into: $zipFilePath"
 # Check if the .xpi file already exists
 if (Test-Path $xpiFilePath)
 {
-    # Ask the user if they want to overwrite the existing file
-    $response = Read-Host "The file $xpiFilePath already exists. Do you want to replace it? (y/n)"
-    if ($response.ToLower() -ne "y")
-    {
-        Write-Host "Skipping the renaming. Exiting script."
-        Exit 0
-    }
     Write-Host "Overwriting the existing file..."
-    # Remove the existing .xpi file
-    Remove-Item -Path $xpiFilePath -Force
+    
+    $tempXpiPath = "$xpiFilePath.old"
+    if (Test-Path $tempXpiPath)
+    {
+        Remove-Item -Path $tempXpiPath -Force -ErrorAction SilentlyContinue
+    }
+    
+    try
+    {
+        Rename-Item -Path $xpiFilePath -NewName (Split-Path $tempXpiPath -Leaf) -Force -ErrorAction Stop
+        Remove-Item -Path $tempXpiPath -Force -ErrorAction SilentlyContinue
+    }
+    catch
+    {
+        # Fallback to direct deletion if rename fails
+        Remove-Item -Path $xpiFilePath -Force
+    }
 }
 
 # Rename the .zip file to .xpi

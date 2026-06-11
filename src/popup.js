@@ -24,13 +24,7 @@ function console_error(...args) {
   console.error('[BetterUnsubscribe][popup.js]', ...args);
 }
 
-async function resize_dropdown() {
-  const el = document.getElementById('deleteButton');
-  const dropdownList = document.getElementById('dropdownList');
-  const rect = el.getBoundingClientRect();
-  const available = window.innerHeight - rect.bottom;
-  dropdownList.style.maxHeight = `${available}px`;
-}
+
 
 /**
  * Main event listener for the DOMContentLoaded event.
@@ -47,19 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const detailsCode = document.getElementById('dynamicCodeBlock');
   const detailsCodeContainer = document.getElementById('dynamicCodeContainer');
 
-  const deleteDiv = document.getElementById('deleteDiv');
-  const dropdownList = document.getElementById('dropdownList');
-  const deleteOneButton = document.getElementById('deleteOneButton');
-  const deleteAllNameAddrButton = document.getElementById(
-    'deleteAllNameAddrButton'
-  );
-  const deleteAllAddrButton = document.getElementById('deleteAllAddrButton');
-  const deleteAllDomainButton = document.getElementById(
-    'deleteAllDomainButton'
-  );
 
-  deleteDiv.addEventListener('mouseenter', resize_dropdown);
-  window.addEventListener('resize', resize_dropdown);
 
   const settings = await messenger.storage.local.get(DEFAULT_SETTINGS);
   console_log('Loaded settings:', settings);
@@ -125,19 +107,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Display the author's email in the UI.
   nameAddress.textContent = author;
 
-  // Update "Delete All" button text based on extracted author information.
-  if (author) {
-    const span = deleteAllNameAddrButton.querySelector('.scroll-x');
-    span.textContent = author;
-  }
-  if (sender && domain) {
-    const span = deleteAllAddrButton.querySelector('.scroll-x');
-    span.textContent = `${sender}@${domain}`;
-  }
-  if (domain) {
-    const span = deleteAllDomainButton.querySelector('.scroll-x');
-    span.textContent = domain;
-  }
+
 
   // Request the unsubscribe method details from the background script.
   messenger.runtime
@@ -267,59 +237,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  // Event listeners for the "Delete" buttons, each using the getDeleteFunc utility function to handle different cases.
-  deleteOneButton.addEventListener(
-    'click',
-    getDeleteFunc(
-      message,
-      statusText,
-      deleteDiv,
-      dropdownList,
-      'deleteOneButton',
-      name,
-      sender,
-      domain
-    )
-  );
-  deleteAllNameAddrButton.addEventListener(
-    'click',
-    getDeleteFunc(
-      message,
-      statusText,
-      deleteDiv,
-      dropdownList,
-      'deleteAllNameAddrButton',
-      name,
-      sender,
-      domain
-    )
-  );
-  deleteAllAddrButton.addEventListener(
-    'click',
-    getDeleteFunc(
-      message,
-      statusText,
-      deleteDiv,
-      dropdownList,
-      'deleteAllAddrButton',
-      name,
-      sender,
-      domain
-    )
-  );
-  deleteAllDomainButton.addEventListener(
-    'click',
-    getDeleteFunc(
-      message,
-      statusText,
-      deleteDiv,
-      dropdownList,
-      'deleteAllDomainButton',
-      name,
-      sender,
-      domain
-    )
-  );
+
 });
 
 /**
@@ -344,87 +262,4 @@ function findMatchingRule(rules, author, address) {
   return null;
 }
 
-/**
- * Generates a function to handle deleting specific messages or message groups based on input parameters.
- * @param {Object} message - The current message object.
- * @param {HTMLElement} statusText - The status text element to update.
- * @param {HTMLElement} deleteDiv - The container for delete options.
- * @param {HTMLElement} dropdownList - The dropdown list element.
- * @param {string} type - The type of delete operation ("deleteOneButton", "deleteAllNameAddrButton", etc.).
- * @param {string} name - The name extracted from the author (if available).
- * @param {string} sender - The sender email extracted from the author (if available).
- * @param {string} domain - The domain extracted from the author (if available).
- * @returns {Function} The function to handle the specific delete operation.
- */
-function getDeleteFunc(
-  message,
-  statusText,
-  deleteDiv,
-  dropdownList,
-  type,
-  name,
-  sender,
-  domain
-) {
-  return async () => {
-    try {
-      console_log('hide dropdown');
-      // Force close the dropdown
-      deleteDiv.classList.add('dropdown-closing');
 
-      setTimeout(() => {
-        deleteDiv.classList.remove('dropdown-closing');
-      }, 100);
-
-      // Create a message object based on the type of delete operation.
-      let message_obj = {};
-      switch (type) {
-        case 'deleteAllNameAddrButton':
-          message_obj.name = name;
-        // fall through
-        case 'deleteAllAddrButton':
-          message_obj.sender = sender;
-        // fall through
-        case 'deleteAllDomainButton':
-          message_obj.domain = domain;
-        // fall through
-        case 'deleteOneButton':
-          message_obj.delete = true;
-        // fall through
-        default:
-          message_obj.messageId = message.id;
-      }
-
-      statusText.removeAttribute('hidden');
-      statusText.textContent = messenger.i18n.getMessage('statusTextDeleting');
-
-      // Send a delete request to the background script.
-      const r = await messenger.runtime.sendMessage(message_obj);
-
-      if (r.response === 'Deleted') {
-        if (r.count) {
-          statusText.textContent =
-            r.count +
-            ' ' +
-            messenger.i18n.getMessage('statusTextDeleteSuccess');
-        } else {
-          statusText.textContent = messenger.i18n.getMessage(
-            'statusTextDeleteSuccess'
-          );
-        }
-        setTimeout(() => {
-          window.close();
-        }, 1000);
-      } else {
-        statusText.textContent = messenger.i18n.getMessage(
-          'statusTextDeleteError'
-        );
-      }
-    } catch (error) {
-      console_error('Error deleting all emails from this sender:', error);
-      statusText.textContent = messenger.i18n.getMessage(
-        'statusTextDeleteError'
-      );
-    }
-  };
-}

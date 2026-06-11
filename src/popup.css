@@ -1,184 +1,184 @@
+/* ── Popup Layout ────────────────────────────────── */
 body {
-  width: 450px;
-  height: 300px;
-  margin: 1em;
+  width: 340px;
+  margin: 0;
+  padding: 14px 18px;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
 }
 
-#unsubscribeButton {
-  background-color: #28a745;
+/* ── Typography ─────────────────────────────────── */
+.popup-question {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0 0 6px;
+  color: #3c3c3c;
 }
 
-#unsubscribeButton:hover {
-  background-color: #218838;
+.sender-info {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6e6e6e;
+  margin: 0 0 14px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
-#cancelButton {
-  background-color: #6c757d;
+/* ── Buttons ────────────────────────────────────── */
+.button-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
-#cancelButton:hover {
-  background-color: #5a6268;
+.button-primary {
+  flex: 1;
+  margin: 0;
+  background-color: #2ea44f;
+  border-radius: 20px;
+  font-size: 12.5px;
+  padding: 7px 0;
+  font-weight: 600;
 }
 
-#deleteButton {
-  background-color: #d9534f;
+.button-primary:hover {
+  background-color: #268d41;
 }
 
-#deleteButton:hover {
-  background-color: #c9302c;
+.button-ghost {
+  flex: 0;
+  margin: 0;
+  background: none;
+  color: #6e6e6e;
+  box-shadow: none;
+  border: 1px solid #d0d0d0;
+  border-radius: 20px;
+  font-size: 12.5px;
+  padding: 7px 18px;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
-/* Button Dropdown Styles */
-.button-dropdown {
-  position: relative;
-  display: inline-block;
+.button-ghost:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #3c3c3c;
+  box-shadow: none;
 }
 
-.button-dropdown div {
+/* ── Status Text ────────────────────────────────── */
+.status-text {
+  font-size: 11.5px;
+  margin: 0 0 8px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #5f6368;
+  text-align: center;
+}
+
+/* ── Details Toggle ─────────────────────────────── */
+.details-toggle {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 8px;
+  margin-top: 2px;
+}
+
+.details-toggle summary {
+  font-size: 11px;
+  color: #888;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  text-align: left;
+}
+
+.details-toggle summary::-webkit-details-marker {
   display: none;
 }
 
-.button-dropdown:hover div,
-.button-dropdown:focus-within div {
-  display: block;
+.details-toggle summary::before {
+  content: "▸ ";
 }
 
-.button-dropdown.dropdown-closing div {
-  display: none !important;
+.details-toggle[open] summary::before {
+  content: "▾ ";
 }
 
-.button-dropdown ul {
-  top: 50%;
-  right: -50%;
-  max-height: calc(100vh - 130px);
-  position: absolute;
-  list-style: none;
-  padding: 0;
-  z-index: 100;
-  border-radius: 4px;
-  background-color: #fff;
-  border: 1px solid #dcdcdc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  /* Let width grow based on content, with limits */
-  width: max-content;
-  min-width: 300%; /* Ensure it's at least this wide */
-  max-width: 400%; /* But not so wide it breaks the popup */
-
-  /* Only scroll vertically if needed */
-  overflow-y: auto;
-  overflow-x: hidden;
+.details-toggle .code-container {
+  margin-top: 6px;
 }
 
-.button-dropdown ul li {
-  padding: 0;
-  color: #1a1a1a;
-  border-top: 1px solid #dcdcdc;
-  white-space: nowrap;
+.details-toggle code {
+  font-size: 11px;
+  margin: 8px;
 }
 
-.button-dropdown ul li:first-child {
-  border-top: none;
-}
-
-#dropdownList button:hover {
-  background-color: #f5f5f5;
-}
-
-#dropdownList button {
-  all: unset;
-  display: block;
-  width: 100%;
-  text-align: inherit;
-  cursor: pointer;
-  box-sizing: border-box;
-  padding: 0.5em;
-}
-
-#dropdownList button:focus-visible {
-  outline: 2px solid #0066cc;
-  outline-offset: -2px;
-}
-
-.scroll-x {
-  display: block;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-
-  /* Improve scrollbar appearance */
-  scrollbar-width: thin;
-  padding-bottom: 5px; /* Space for scrollbar */
-}
-
-/* Confirmation section */
-
+/* ── Confirmation Section ───────────────────────── */
 .confirm-warning {
-  background-color: #fff3cd;
-  border: 1px solid #ffc107;
-  border-radius: 4px;
-  padding: 10px 12px;
+  background-color: #fffbeb;
+  border: 1px solid #f0d060;
+  border-radius: 8px;
+  padding: 8px 12px;
   color: #856404;
   text-align: left;
+  font-size: 12px;
   line-height: 1.4;
-  margin: 0.5em;
+  margin: 8px 0;
 }
 
 .confirm-label {
-  font-size: 0.85em;
-  color: #5f6368;
-  margin-bottom: 4px;
+  font-size: 11.5px;
+  color: #6e6e6e;
+  margin: 0 0 4px;
 }
 
-#confirmAuthor {
-  white-space: normal;
-  overflow-wrap: break-word;
-}
-
+#confirmAuthor,
 #confirmTarget {
   white-space: normal;
   overflow-wrap: break-word;
+  font-size: 11px;
 }
 
-#confirmYesButton {
-  background-color: #28a745;
-}
-
-#confirmYesButton:hover {
-  background-color: #218838;
-}
-
-#confirmNoButton {
-  background-color: #6c757d;
-}
-
-#confirmNoButton:hover {
-  background-color: #5a6268;
-}
-
-/* Dark Theme Styles */
+/* ── Dark Theme ─────────────────────────────────── */
 @media (prefers-color-scheme: dark) {
-  .button-dropdown ul {
-    background-color: #2c2c2c;
-    border: 1px solid #444;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  .popup-question {
+    color: #e0e0e0;
   }
 
-  .button-dropdown ul li {
-    color: #fff;
-    border-top: 1px solid #444;
+  .sender-info {
+    color: #9e9e9e;
   }
 
-  #dropdownList button:hover {
-    background-color: #444;
+  .button-primary {
+    background-color: #2ea44f;
   }
 
-  #dropdownList button:focus-visible {
-    outline-color: #66b3ff;
+  .button-primary:hover {
+    background-color: #3bb85c;
+  }
+
+  .button-ghost {
+    color: #aaa;
+    border-color: #555;
+  }
+
+  .button-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ddd;
+  }
+
+  .status-text {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #bbb;
+  }
+
+  .details-toggle {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .details-toggle summary {
+    color: #777;
   }
 
   .confirm-warning {
