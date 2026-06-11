@@ -51,26 +51,6 @@
     "description": "Zastępcze ostrzeżenie w oknie dialogowym potwierdzenia, gdy nie ustawiono niestandardowego komunikatu dla dopasowanej reguły",
     "message": "Ten adres pasuje do jednej z Twoich reguł potwierdzeń. Czy na pewno chcesz kontynuować?"
   },
-  "deleteAllAddrButton": {
-    "description": "Przycisk do usunięcia wszystkich e-maili z określonego adresu",
-    "message": "Wszystkie z adresu:"
-  },
-  "deleteAllDomainButton": {
-    "description": "Przycisk do usunięcia wszystkich e-maili z domeny",
-    "message": "Wszystkie z domeny:"
-  },
-  "deleteAllNameAddrButton": {
-    "description": "Przycisk do usunięcia wszystkich e-maili od konkretnego nadawcy",
-    "message": "Wszystkie od nadawcy:"
-  },
-  "deleteButton": {
-    "description": "Etykieta przycisku usuwania z wskaźnikiem rozwijanym",
-    "message": "Usuń ▼"
-  },
-  "deleteOneButton": {
-    "description": "Etykieta przycisku do usunięcia tylko bieżącego e-maila",
-    "message": "Tylko ten"
-  },
   "detailsTextEmail": {
     "description": "Szczegóły dla wiadomości e-mail",
     "message": "Po kliknięciu \"Zrezygnuj\" zostanie utworzona wiadomość e-mail na poniższy adres:"
@@ -118,18 +98,6 @@
   "settingsSaved": {
     "description": "Komunikat wyświetlany po zapisaniu ustawień",
     "message": "Ustawienia zostały pomyślnie zapisane!"
-  },
-  "statusTextDeleteError": {
-    "description": "Tekst statusu, gdy usunięcie e-maila nie powiodło się",
-    "message": "Nie udało się usunąć e-maila(ów)."
-  },
-  "statusTextDeleteSuccess": {
-    "description": "Tekst statusu dla pomyślnego usunięcia e-maila",
-    "message": "E-mail(e) pomyślnie usunięty(e)."
-  },
-  "statusTextDeleting": {
-    "description": "Tekst statusu podczas usuwania e-maila(ów)",
-    "message": "Usuwanie e-maila(ów)..."
   },
   "statusTextDone": {
     "description": "Tekst statusu dla stanu ukończonego",

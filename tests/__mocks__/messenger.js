@@ -486,6 +486,12 @@ const messenger = {
     create: jest.fn(),
 
     /**
+     * Open a URL in the user's default system browser
+     * @returns {Promise<void>}
+     */
+    openDefaultBrowser: jest.fn(),
+
+    /**
      * Update window properties
      * @returns {Promise<Object>} Updated window object
      */

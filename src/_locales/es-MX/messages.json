@@ -51,26 +51,6 @@
     "description": "Advertencia predeterminada en el cuadro de confirmación cuando no se definió un mensaje personalizado para la regla coincidente",
     "message": "Esta dirección coincide con una de tus reglas de confirmación. ¿Seguro que quieres continuar?"
   },
-  "deleteAllAddrButton": {
-    "description": "Botón para eliminar todos los correos electrónicos de una dirección",
-    "message": "Todos de la dirección:"
-  },
-  "deleteAllDomainButton": {
-    "description": "Botón para eliminar todos los correos electrónicos de un dominio",
-    "message": "Todos del dominio:"
-  },
-  "deleteAllNameAddrButton": {
-    "description": "Botón para eliminar todos los correos electrónicos de un remitente específico",
-    "message": "Todos del remitente:"
-  },
-  "deleteButton": {
-    "description": "Etiqueta para el botón de eliminar con un indicador desplegable",
-    "message": "Eliminar ▼"
-  },
-  "deleteOneButton": {
-    "description": "Etiqueta para el botón de eliminar solo el correo actual",
-    "message": "Solo este"
-  },
   "detailsTextEmail": {
     "description": "Detalles para un correo electrónico",
     "message": "Cuando haces clic en \"Darse de baja\", se redactará un correo electrónico a la siguiente dirección:"
@@ -118,18 +98,6 @@
   "settingsSaved": {
     "description": "Mensaje que se muestra cuando la configuración se guarda",
     "message": "¡La configuración se guardó correctamente!"
-  },
-  "statusTextDeleteError": {
-    "description": "Texto de estado cuando la eliminación de correos falla",
-    "message": "Error al eliminar el(los) correo(s)."
-  },
-  "statusTextDeleteSuccess": {
-    "description": "Texto de estado para la eliminación exitosa de correos",
-    "message": "Correo(s) eliminados con éxito."
-  },
-  "statusTextDeleting": {
-    "description": "Texto de estado mientras se eliminan los correos",
-    "message": "Eliminando correo(s)..."
   },
   "statusTextDone": {
     "description": "Texto de estado para el estado de hecho",

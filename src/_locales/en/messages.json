@@ -51,26 +51,6 @@
     "description": "Fallback warning in confirmation dialog when no custom message was set for the matched rule",
     "message": "This address matches one of your confirmation rules. Are you sure you want to continue?"
   },
-  "deleteAllAddrButton": {
-    "description": "Button to delete all emails from an address",
-    "message": "All from address:"
-  },
-  "deleteAllDomainButton": {
-    "description": "Button to delete all emails from a domain",
-    "message": "All from domain:"
-  },
-  "deleteAllNameAddrButton": {
-    "description": "Button to delete all emails from a specific sender",
-    "message": "All from sender:"
-  },
-  "deleteButton": {
-    "description": "Label for the delete button with a dropdown indicator",
-    "message": "Delete ▼"
-  },
-  "deleteOneButton": {
-    "description": "Button to delete only the current email",
-    "message": "Just this"
-  },
   "detailsTextEmail": {
     "description": "Details for a Email",
     "message": "When you click \"Unsubscribe\", an email will be drafted to the following address:"
@@ -118,18 +98,6 @@
   "settingsSaved": {
     "description": "Message shown when settings are saved",
     "message": "Settings saved successfully!"
-  },
-  "statusTextDeleteError": {
-    "description": "Status text when email deletion fails",
-    "message": "Failed to delete email(s)."
-  },
-  "statusTextDeleteSuccess": {
-    "description": "Status text for successful email deletion",
-    "message": "Email(s) deleted successfully."
-  },
-  "statusTextDeleting": {
-    "description": "Status text while email(s) are being deleted",
-    "message": "Deleting email(s)..."
   },
   "statusTextDone": {
     "description": "Status text for done state",

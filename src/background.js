@@ -757,25 +757,21 @@ class UnsubWeb extends UnsubMethod {
 
   /**
    * Executes the unsubscribe action by opening the sender's
-   * unsubscribe web page in a popup browser window.
+   * unsubscribe web page in the user's default system browser.
    *
    * This follows the RFC 2369 "List-Unsubscribe" web-link mechanism.
    * No network request is made automatically; the user completes
-   * the process manually in the opened window.
+   * the process manually in the opened browser window.
    *
-   * Throws an {@link Error} if the window cannot be created.
+   * Throws an {@link Error} if the browser cannot be opened.
    *
    * @async
-   * @throws {Error} If the popup window cannot be opened (for example,
-   *         due to permissions or browser restrictions).
-   * @returns {Promise<void>} Resolves once the popup window has been
+   * @throws {Error} If the browser cannot be opened.
+   * @returns {Promise<void>} Resolves once the browser has been
    *          successfully opened.
    */
   async call() {
-    await messenger.windows.create({
-      url: this.link.href,
-      type: 'popup',
-    });
+    await messenger.windows.openDefaultBrowser(this.link.href);
   }
 
   /**

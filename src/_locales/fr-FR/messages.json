@@ -51,26 +51,6 @@
     "description": "Avertissement de secours dans la boîte de dialogue de confirmation lorsqu'aucun message personnalisé n'a été défini pour la règle correspondante",
     "message": "Cette adresse correspond à l'une de vos règles de confirmation. Êtes-vous sûr de vouloir continuer ?"
   },
-  "deleteAllAddrButton": {
-    "description": "Bouton pour supprimer tous les courriels d'une adresse",
-    "message": "Tous de l'adresse :"
-  },
-  "deleteAllDomainButton": {
-    "description": "Bouton pour supprimer tous les courriels d'un domaine",
-    "message": "Tous du domaine :"
-  },
-  "deleteAllNameAddrButton": {
-    "description": "Bouton pour supprimer tous les courriels d'un expéditeur spécifique",
-    "message": "Tous de l'expéditeur :"
-  },
-  "deleteButton": {
-    "description": "Libellé pour le bouton de suppression avec un indicateur déroulant",
-    "message": "Supprimer ▼"
-  },
-  "deleteOneButton": {
-    "description": "Libellé pour le bouton de suppression du courriel actuel",
-    "message": "Seulement celui-ci"
-  },
   "detailsTextEmail": {
     "description": "Détails pour un courriel",
     "message": "Lorsque vous cliquez sur \"Se désabonner\", un courriel sera rédigé à l'adresse suivante :"
@@ -118,18 +98,6 @@
   "settingsSaved": {
     "description": "Message affiché lors de l'enregistrement des paramètres",
     "message": "Paramètres enregistrés avec succès !"
-  },
-  "statusTextDeleteError": {
-    "description": "Texte de statut en cas d'échec de suppression des courriels",
-    "message": "Échec de la suppression du/des courriel(s)."
-  },
-  "statusTextDeleteSuccess": {
-    "description": "Texte de statut pour une suppression réussie des courriels",
-    "message": "Courriel(s) supprimé(s) avec succès."
-  },
-  "statusTextDeleting": {
-    "description": "Texte de statut pendant la suppression des courriels",
-    "message": "Suppression des courriels en cours..."
   },
   "statusTextDone": {
     "description": "Texte de statut pour l'état terminé",

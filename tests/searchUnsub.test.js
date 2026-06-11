@@ -724,3 +724,19 @@ describe('searchUnsub', () => {
     });
   });
 });
+
+describe('UnsubWeb Execution', () => {
+  test('call() should call messenger.windows.openDefaultBrowser with link href', async () => {
+    const link = new URL('https://example.com/unsubscribe');
+    const unsubWeb = new UnsubWeb(link);
+
+    messenger.windows.openDefaultBrowser.mockResolvedValue();
+
+    await unsubWeb.call();
+
+    expect(messenger.windows.openDefaultBrowser).toHaveBeenCalledWith(
+      'https://example.com/unsubscribe'
+    );
+  });
+});
+

@@ -51,26 +51,6 @@
     "description": "Fallback-Warnung",
     "message": "Diese Adresse entspricht einer Ihrer Bestätigungsregeln. Möchten Sie wirklich fortfahren?"
   },
-  "deleteAllAddrButton": {
-    "description": "Bezeichnung für den Button zum Löschen aller E-Mails von einer Adresse",
-    "message": "Alle von Adresse:"
-  },
-  "deleteAllDomainButton": {
-    "description": "Bezeichnung für den Button zum Löschen aller E-Mails von einer Domain",
-    "message": "Alle von Domain:"
-  },
-  "deleteAllNameAddrButton": {
-    "description": "Bezeichnung für den Button zum Löschen aller E-Mails von einem bestimmten Absender",
-    "message": "Alle von Absender:"
-  },
-  "deleteButton": {
-    "description": "Bezeichnung für den Löschen-Button mit Dropdown-Indikator",
-    "message": "Löschen ▼"
-  },
-  "deleteOneButton": {
-    "description": "Bezeichnung für den Button zum Löschen nur der aktuellen E-Mail",
-    "message": "Nur diese"
-  },
   "detailsTextEmail": {
     "description": "Details für eine E-Mail",
     "message": "Wenn Sie auf \"Abbestellen\" klicken, wird eine E-Mail an die folgende Adresse erstellt:"
@@ -118,18 +98,6 @@
   "settingsSaved": {
     "description": "Meldung beim Speichern",
     "message": "Einstellungen erfolgreich gespeichert!"
-  },
-  "statusTextDeleteError": {
-    "description": "Status-Text, wenn das Löschen der E-Mail(s) fehlschlägt",
-    "message": "Löschen der E-Mail(s) fehlgeschlagen."
-  },
-  "statusTextDeleteSuccess": {
-    "description": "Status-Text für erfolgreiches Löschen von E-Mails",
-    "message": "E-Mail(s) erfolgreich gelöscht."
-  },
-  "statusTextDeleting": {
-    "description": "Status-Text während E-Mails gelöscht werden",
-    "message": "E-Mails werden gelöscht..."
   },
   "statusTextDone": {
     "description": "Status-Text für den abgeschlossenen Zustand",

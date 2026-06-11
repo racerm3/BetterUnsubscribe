@@ -51,26 +51,6 @@
     "description": "Avviso di fallback nella finestra di dialogo di conferma quando non è stato impostato alcun messaggio personalizzato per la regola corrispondente",
     "message": "Questo indirizzo corrisponde a una delle tue regole di conferma. Sei sicuro di voler continuare?"
   },
-  "deleteAllAddrButton": {
-    "description": "Pulsante per eliminare tutte le email da un indirizzo",
-    "message": "Tutti dall'indirizzo:"
-  },
-  "deleteAllDomainButton": {
-    "description": "Pulsante per eliminare tutte le email da un dominio",
-    "message": "Tutti dal dominio:"
-  },
-  "deleteAllNameAddrButton": {
-    "description": "Pulsante per eliminare tutte le email di un mittente specifico",
-    "message": "Tutti dal mittente:"
-  },
-  "deleteButton": {
-    "description": "Etichetta per il pulsante di eliminazione con un indicatore a discesa",
-    "message": "Elimina ▼"
-  },
-  "deleteOneButton": {
-    "description": "Etichetta per il pulsante per eliminare solo l'email corrente",
-    "message": "Solo questo"
-  },
   "detailsTextEmail": {
     "description": "Dettagli per un'email",
     "message": "Quando fai clic su \"Disiscriviti\", verrà redatta un'email al seguente indirizzo:"
@@ -118,18 +98,6 @@
   "settingsSaved": {
     "description": "Messaggio mostrato quando le impostazioni vengono salvate",
     "message": "Impostazioni salvate con successo!"
-  },
-  "statusTextDeleteError": {
-    "description": "Testo di stato per errore durante l'eliminazione delle email",
-    "message": "Impossibile eliminare l'email/le email."
-  },
-  "statusTextDeleteSuccess": {
-    "description": "Testo di stato per eliminazione riuscita delle email",
-    "message": "Email eliminata/e con successo."
-  },
-  "statusTextDeleting": {
-    "description": "Testo di stato durante l'eliminazione delle email",
-    "message": "Eliminazione delle email in corso..."
   },
   "statusTextDone": {
     "description": "Testo di stato per operazione completata",
